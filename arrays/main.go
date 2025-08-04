@@ -51,4 +51,59 @@ func main() {
 	////////////////////////////      MAPS      ///////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
+	var myMap map[string]uint8 = make(map[string]uint8) // Makes a map with string keys and values chars
+	fmt.Printf("Initial map: %v\n", myMap)
+
+	myMap["Hello"] = 1
+	myMap["World"] = 2
+
+	fmt.Printf("Map after adding some keys and values: %v\n", myMap)
+
+	// Initialize map with stuff in it:
+	var myMap2 = map[string]uint8{"Adam": 23, "Sarah": 45}
+	fmt.Println(myMap2["Sarah"])
+	fmt.Println(myMap2["James"]) // Still returns a value
+	var age, b = myMap2["James"] // Gives false as second argument!
+	if b {
+		fmt.Printf("James is %v old\n", age)
+	} else {
+		fmt.Printf("James was not found\n")
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	////////////////////////////      LOOPS     ///////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
+	for name := range myMap2 { // Can itterate over keys in map
+		fmt.Printf("Name: %v\n", name)
+	}
+
+	for name, age := range myMap2 { // Can also itterate over key, value pairs
+		fmt.Printf("%v is %v years old\n", name, age)
+	}
+
+	// For loops:
+	var i int = 0
+	for i < 10 {
+		fmt.Printf("%v ", i)
+		i++
+	}
+	fmt.Println()
+
+	// can use break:
+	for {
+		if i >= 20 {
+			break
+		}
+		fmt.Printf("%v ", i)
+		i++
+	}
+	fmt.Println()
+
+	// also use "normal" for loop syntax:
+	for j := 0; j < 10; j++ {
+		fmt.Printf("%v ", j)
+	}
+	fmt.Println()
+
 }
